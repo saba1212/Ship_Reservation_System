@@ -8,7 +8,7 @@ import javax.persistence.Id;
 public class Route {
 
 @Id
-private String routeId;
+private String routeid;
 
 @Column
 private String source;
@@ -17,7 +17,7 @@ private String source;
 private String destination;
 
 @Column
-private String travelDuration;
+private String travelduration;
 
 @Column
 private int fare;
@@ -31,21 +31,21 @@ public Route() {
 
 public Route(String routeId, String source, String destination, String travelDuration, int fare) {
 	super();
-	this.routeId = routeId;
+	this.routeid = routeId;
 	this.source = source;
 	this.destination = destination;
-	this.travelDuration = travelDuration;
+	this.travelduration = travelDuration;
 	this.fare = fare;
 }
 
 
 public String getRouteId() {
-	return routeId;
+	return routeid;
 }
 
 
 public void setRouteId(String routeId) {
-	this.routeId = routeId;
+	this.routeid = routeId;
 }
 
 
@@ -70,12 +70,12 @@ public void setDestination(String destination) {
 
 
 public String getTravelDuration() {
-	return travelDuration;
+	return travelduration;
 }
 
 
 public void setTravelDuration(String travelDuration) {
-	this.travelDuration = travelDuration;
+	this.travelduration = travelDuration;
 }
 
 
@@ -91,8 +91,8 @@ public void setFare(int fare) {
 
 @Override
 public String toString() {
-	return "Route [routeId=" + routeId + ", source=" + source + ", destination=" + destination + ", travelDuration="
-			+ travelDuration + ", fare=" + fare + "]";
+	return "Route [routeId=" + routeid + ", source=" + source + ", destination=" + destination + ", travelDuration="
+			+ travelduration + ", fare=" + fare + "]";
 }
 
 

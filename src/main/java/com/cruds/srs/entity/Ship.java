@@ -8,16 +8,16 @@ import javax.persistence.Id;
 public class Ship {
 	
 	@Id
-	private String shipId;
+	private String shipid;
 	
 	@Column
-	private String shipName;
+	private String shipname;
 	
 	@Column
-	private int seatingCapacity ;
+	private int seatingcapacity ;
 	
 	@Column
-	private int reservationCapacity;
+	private int reservationcapacity;
 
 	
 	public Ship() {
@@ -28,57 +28,57 @@ public class Ship {
 
 	public Ship(String shipId, String shipName, int seatingCapacity, int reservationCapacity) {
 		super();
-		this.shipId = shipId;
-		this.shipName = shipName;
-		this.seatingCapacity = seatingCapacity;
-		this.reservationCapacity = reservationCapacity;
+		this.shipid = shipId;
+		this.shipname = shipName;
+		this.seatingcapacity = seatingCapacity;
+		this.reservationcapacity = reservationCapacity;
 	}
 
 
 	public String getShipId() {
-		return shipId;
+		return shipid;
 	}
 
 
 	public void setShipId(String shipId) {
-		this.shipId = shipId;
+		this.shipid = shipId;
 	}
 
 
 	public String getShipName() {
-		return shipName;
+		return shipname;
 	}
 
 
 	public void setShipName(String shipName) {
-		this.shipName = shipName;
+		this.shipname = shipName;
 	}
 
 
 	public int getSeatingCapacity() {
-		return seatingCapacity;
+		return seatingcapacity;
 	}
 
 
 	public void setSeatingCapacity(int seatingCapacity) {
-		this.seatingCapacity = seatingCapacity;
+		this.seatingcapacity = seatingCapacity;
 	}
 
 
 	public int getReservationCapacity() {
-		return reservationCapacity;
+		return reservationcapacity;
 	}
 
 
 	public void setReservationCapacity(int reservationCapacity) {
-		this.reservationCapacity = reservationCapacity;
+		this.reservationcapacity = reservationCapacity;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Ship [shipId=" + shipId + ", shipName=" + shipName + ", seatingCapacity=" + seatingCapacity
-				+ ", reservationCapacity=" + reservationCapacity + "]";
+		return "Ship [shipId=" + shipid + ", shipName=" + shipname + ", seatingCapacity=" + seatingcapacity
+				+ ", reservationCapacity=" + reservationcapacity + "]";
 	}
 	
 	

@@ -1,6 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>SHIP RESERVATION SYSTEM</h2>
 
 <a href="ship.html">ENTER SHIP DETAILS HERE</a>
 <br>
