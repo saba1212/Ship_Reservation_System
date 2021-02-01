@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cruds.srs.entity.Ship;
-import com.cruds.srs.exception.SMSException;
+import com.cruds.srs.exception.SRSException;
 
 @Repository
 public class ShipDAOImpl implements ShipDAO {
@@ -16,6 +16,7 @@ public class ShipDAOImpl implements ShipDAO {
 @Autowired	
 SessionFactory sessionfactory;
 
+@Autowired
 public void setSessionfactory(SessionFactory sessionfactory) {
 	
 	this.sessionfactory = sessionfactory;
@@ -26,6 +27,8 @@ public String addship(Ship shipBean)
 
 	Session session=sessionfactory.openSession();
 	session.beginTransaction();
+	
+	
 	try
 	{
 
@@ -40,17 +43,17 @@ public String addship(Ship shipBean)
 	
 	
 	
-	catch (SMSException e) 
+	catch (SRSException e) 
 	{
 	
 	e.printStackTrace();
 	if(e.getMessage().contains("Duplicate Entry"))
 	{
-		throw new SMSException(shipBean.getShipId() +" This ShipId already exists!");
+		throw new SRSException(shipBean.getShipId() +" This ShipId already exists!");
 	}
 	else
 	{   
-		throw new SMSException(e.getMessage() +"contact the Ship Administration Authorities!\t Have a Good Day!!");
+		throw new SRSException(e.getMessage() +"contact the Ship Administration Authorities!\t Have a Good Day!!");
 	}
 }
 	catch (org.hibernate.exception.ConstraintViolationException e) {
@@ -68,6 +71,7 @@ public boolean modifyShip(Ship shipbean) {
 
 	Session session=sessionfactory.openSession();
 	session.beginTransaction();
+	
 	try
 	{
 		session.update(shipbean);
@@ -82,6 +86,8 @@ public boolean modifyShip(Ship shipbean) {
 		System.out.println("nullformat exception");
 		return false;
 	}
+	
+	
 	catch (org.hibernate.TransientObjectException e) {
 		// TODO: handle exception
 		return false;

@@ -11,14 +11,9 @@
    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 	<mvc:annotation-driven />
-	<context:component-scan base-package="com.cruds.srs*" />
+	<context:component-scan base-package="com.cruds.srs.*" />
 
-	<bean id="flightDAO" class="com.cruds.frs.db.FlightDAOImpl">
-		<property name="sessionfactory">
-			<ref bean="sessionfactory" />
-		</property>
-	</bean>
-
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
@@ -26,10 +21,12 @@
 	</bean>
 
 
+ 
+    
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/FRS" />
+		<property name="url" value="jdbc:mysql://localhost:3306/SRS" />
 		<property name="username" value="root" />
 		<property name="password" value="sabarehan" />
 	</bean>

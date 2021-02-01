@@ -1,19 +1,19 @@
 <html>
+<head>
+
+</head>
 <body>
-<h2>SHIP RESERVATION SYSTEM</h2>
+<style>
+          body {
+            background-image: url("file:///C:/Users/Win/workspace2/SRS/src/main/webapp/WEB-INF/images/Ship.jpg");
+         }
+</style>
+ 
+ 
+ <h1> WELCOME TO SHIP RESERVATION SYSTEM</h1>
+ 
+ <a href="Ship.html"><h2><b><em>ENTER SHIP DETAILS</em></b></a></h2>
 
-<a href="ship.html">ENTER SHIP DETAILS HERE</a>
-<br>
-
-<a href="shiplist"> VIEW ALL SHIPS</a>
-<br>
-
-
-<a href="shipdelete">Delete Ship</a> 
-<br>
-
-
-<a href="shipmodify"> Modify Ship</a>
 
 
 </body>

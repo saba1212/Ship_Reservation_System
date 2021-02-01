@@ -6,11 +6,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>SHIP PAGE</title>
 </head>
 <body>
 
-<img src="Ship.jpg"  width="500" height="333">
+<style>
+ body {
+            background-image: url("file:///C:/Users/Win/workspace2/SRS/src/main/webapp/WEB-INF/images/Boat.png");
+         }
+</style>
+
+
+			 <form action ="ship.html" method ="post">
+              
+              <br />
+        	 <br />                                                 
+            SHIP ID:  <input type = "text" name = "shipid" />                               SHIP NAME: <input type = "text" name = "shipname" />   
+            
+         <br />
+         <br />
+         SEATING CAPACITY: <input type = "text" name = "seatingcapacity" />                 RESERVATION CAPACITY:<input type = "text" name = "reservationcapacity" />
+            
+         <br />
+         <br />        
+                                 
+                                                <input type = "submit" value ="Submit" />
+      </form>
+
+
 
 
 

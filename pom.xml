@@ -16,8 +16,8 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-
-
+		
+		
 		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -48,7 +48,7 @@
 			<artifactId>spring-orm</artifactId>
 			<version>4.1.6.RELEASE</version>
 		</dependency>
-
+		
 		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-core</artifactId> 
 			<version>4.0.1.RELEASE</version> </dependency> -->
 
@@ -63,10 +63,10 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.0.1.RELEASE</version>
 		</dependency>
-
-
+		
+		
 		<!-- ///////////////Spring Dependencies END///////////////// -->
-
+		
 
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
@@ -88,8 +88,7 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
-
-
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

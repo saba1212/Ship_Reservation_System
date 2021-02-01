@@ -1,18 +1,18 @@
 package com.cruds.srs.exception;
 
-public class SMSException extends RuntimeException{
+public class SRSException extends RuntimeException{
 	
 	private String info;
 
 	
 	
 
-	public SMSException() {
+	public SRSException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public SMSException(String info) {
+	public SRSException(String info) {
 		super();
 		this.info = info;
 	}
