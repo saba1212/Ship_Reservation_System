@@ -22,10 +22,8 @@
               <br />
         	 <br />                                                 
             SHIP ID:  <input type = "text" name = "shipid" />                               SHIP NAME: <input type = "text" name = "shipname" />   
-            
-         <br />
-         <br />
-         SEATING CAPACITY: <input type = "text" name = "seatingcapacity" />                 RESERVATION CAPACITY:<input type = "text" name = "reservationcapacity" />
+            <p><font size="4" color="red">WARNING! Seating Capacity must be less than or equal to Reservation Capacity. Therfore enter the details properly</font></p>
+        SEATING CAPACITY: <input type = "text" name = "seatingcapacity" />                 RESERVATION CAPACITY:<input type = "text" name = "reservationcapacity" />
             
          <br />
          <br />        
