@@ -12,7 +12,7 @@
 
 <style>
  body {
-            background-image: url("file:///C:/Users/Win/workspace2/SRS/src/main/webapp/WEB-INF/images/Boat.png");
+            background-image: url("file:///C:/Users/Win/workspace2/SRS/src/main/webapp/WEB-INF/images/Cruise.jpg");
          }
 </style>
 
@@ -22,7 +22,7 @@
               <br />
         	 <br />                                                 
             SHIP ID:  <input type = "text" name = "shipid" />                               SHIP NAME: <input type = "text" name = "shipname" />   
-            <p><font size="4" color="red">WARNING! Seating Capacity must be less than or equal to Reservation Capacity. Therfore enter the details properly</font></p>
+            <p><font size="4" color="white">WARNING! Seating Capacity must be less than or equal to Reservation Capacity. Therfore enter the details properly</font></p>
         SEATING CAPACITY: <input type = "text" name = "seatingcapacity" />                 RESERVATION CAPACITY:<input type = "text" name = "reservationcapacity" />
             
          <br />

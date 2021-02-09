@@ -16,7 +16,7 @@ public class ShipDAOImpl implements ShipDAO {
 @Autowired	
 SessionFactory sessionfactory;
 
-@Autowired
+
 public void setSessionfactory(SessionFactory sessionfactory) {
 	
 	this.sessionfactory = sessionfactory;
@@ -34,7 +34,6 @@ public String addship(Ship shipBean)
 
 
 		session.save(shipBean);
-
 		session.getTransaction().commit();
 		session.close();
 		return "success";
@@ -47,31 +46,46 @@ public String addship(Ship shipBean)
 	{
 	
 	e.printStackTrace();
-	if(e.getMessage().contains("Duplicate Entry"))
+	if(e.getMessage().contains("Same Entry"))
 	{
-		throw new SRSException(shipBean.getShipId() +" This ShipId already exists!");
+		throw new SRSException(shipBean.getShipid() +" This ShipId already exists!");
 	}
 	else
 	{   
-		throw new SRSException(e.getMessage() +"contact the Ship Administration Authorities!\t Have a Good Day!!");
+		throw new SRSException(e.getMessage() +"contact the Ship Administration Authorities!\n Have a Good Day!!");
 	}
-}
-	catch (org.hibernate.exception.ConstraintViolationException e) {
-		
-		System.out.println("Duplicate entry not possible");
+	}
+	
+	catch (org.hibernate.exception.ConstraintViolationException e) 
+	{
+		// TODO: handle exception
+		System.out.println("Same Entry is not possible");
 
 	}
 	return null;
-
-
 }
 
-public boolean modifyShip(Ship shipbean) {
+	
+	
 
 
+
+
+//ship details after adding (list)
+public ArrayList<Ship> viewByAllShips() {
 	Session session=sessionfactory.openSession();
 	session.beginTransaction();
-	
+	ArrayList<Ship> shiplist= (ArrayList<Ship>) session.createQuery("from Ship").list();
+	session.getTransaction().commit();
+	session.close();
+	return shiplist;
+}
+
+
+//Ship modify
+public boolean modifyShip(Ship shipbean) {
+	Session session=sessionfactory.openSession();
+	session.beginTransaction();
 	try
 	{
 		session.update(shipbean);
@@ -79,32 +93,34 @@ public boolean modifyShip(Ship shipbean) {
 		session.close();
 		return true ;
 	}
-	
-	
 	catch ( java.lang.NumberFormatException e) {
 
-		System.out.println("nullformat exception");
+		System.out.println("exception");
 		return false;
 	}
-	
-	
 	catch (org.hibernate.TransientObjectException e) {
 		// TODO: handle exception
 		return false;
 	}
 
 
-}
 
-public int removeShip(String shipid) {
+	}
 
+
+
+//delete ship
+public int removeShip(String shipId) {
+	
 	Session session=sessionfactory.openSession();
 	session.beginTransaction();
 
 	try
 	{
-		Ship s=(Ship) session.load(Ship.class, shipid);
+		Ship s= (Ship) session.load(Ship.class, shipId);
+		//System.out.println(getShipid());
 		session.delete(s);
+		session.flush();
 
 		session.getTransaction().commit();
 		session.close();
@@ -113,25 +129,21 @@ public int removeShip(String shipid) {
 		return 1;
 	}
 	
-	
 	catch ( java.lang.IllegalArgumentException e) {
 
-		System.out.println("null pointer exception"+e.getMessage());
-		// TODO: handle exception
+		System.out.println(" exception"+e.getMessage());
+		
 		return 0;
 	}
-}
 	
-@SuppressWarnings("unchecked")
-public ArrayList<Ship> viewByAllShips() {
-
-	Session session=sessionfactory.openSession();
-	session.beginTransaction();
-	ArrayList<Ship> slist= (ArrayList<Ship>) session.createQuery("from Ship").list();
-	session.getTransaction().commit();
-	session.close();
-	return slist;
+	catch (org.hibernate.exception.ConstraintViolationException e) 
+	{
+		
+		return 0;
+	}
 
 }
-
 }
+
+
+

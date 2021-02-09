@@ -2,8 +2,8 @@ package com.cruds.srs.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 
 @Entity
@@ -28,60 +28,69 @@ public class Ship {
 	}
 
 
-	public Ship(String shipId, String shipName, int seatingCapacity, int reservationCapacity) {
+	public Ship(String shipId, String shipName, int seatingcapacity, int reservationcapacity) {
 		super();
 		this.shipid = shipId;
 		this.shipname = shipName;
-		this.seatingcapacity = seatingCapacity;
-		this.reservationcapacity = reservationCapacity;
+		this.seatingcapacity = seatingcapacity;
+		this.reservationcapacity = reservationcapacity;
 	}
 
 
-	public String getShipId() {
+	
+
+	
+
+	public String getShipid() {
 		return shipid;
 	}
 
 
-	public void setShipId(String shipId) {
-		this.shipid = shipId;
+	public void setShipid(String shipid) {
+		this.shipid = shipid;
 	}
 
 
-	public String getShipName() {
+	
+
+
+	public String getShipname() {
 		return shipname;
 	}
 
 
-	public void setShipName(String shipName) {
-		this.shipname = shipName;
+	public void setShipname(String shipname) {
+		this.shipname = shipname;
 	}
 
 
-	public int getSeatingCapacity() {
+	public int getSeatingcapacity() {
 		return seatingcapacity;
 	}
 
 
-	public void setSeatingCapacity(int seatingCapacity) {
-		this.seatingcapacity = seatingCapacity;
+	public void setSeatingcapacity(int seatingcapacity) {
+		this.seatingcapacity = seatingcapacity;
 	}
 
 
-	public int getReservationCapacity() {
+	public int getReservationcapacity() {
 		return reservationcapacity;
 	}
 
 
-	public void setReservationCapacity(int reservationCapacity) {
-		this.reservationcapacity = reservationCapacity;
+	public void setReservationcapacity(int reservationcapacity) {
+		this.reservationcapacity = reservationcapacity;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Ship [shipId=" + shipid + ", shipName=" + shipname + ", seatingCapacity=" + seatingcapacity
-				+ ", reservationCapacity=" + reservationcapacity + "]";
+		return "Ship [shipid=" + shipid + "]";
 	}
+
+
+	
 	
 	
 
