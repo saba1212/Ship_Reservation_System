@@ -1,18 +1,19 @@
 package com.cruds.srs.db;
 
+
 import java.util.ArrayList;
 
 import com.cruds.srs.entity.Route;
 
+
 public interface RouteDAO {
-
-	public String addRoute(Route routeBean);
 	
-	public boolean modifyRoute(Route routebean);
+	public String addRoute(Route Routebean);
 	
-	public int removeRoute(String routeid);
-	
-	public ArrayList<Route> viewByAllRoute();
-
+	 public ArrayList<Route> viewByAllRoute();
+	 
+	 public int removeRoute(String routeId);
+	 
+	 public boolean modifyRoute(Route routebean);
 
 }

@@ -8,41 +8,33 @@ import org.springframework.stereotype.Service;
 import com.cruds.srs.db.RouteDAO;
 import com.cruds.srs.entity.Route;
 
-@Service
-public class Routeservice {
+
+	@Service
+	public class Routeservice {
+	
 
 	@Autowired
-	RouteDAO routedao;
+	RouteDAO routeDao;
 
-	
-	
+
 	public String addRoute(Route Routebean)
 	{
-		return routedao.addRoute(Routebean);
+	return routeDao.addRoute(Routebean);
 	}
-	
-	
+
 	public ArrayList<Route> viewByAllRoute()
 	{
-		return routedao.viewByAllRoute();
+	return routeDao.viewByAllRoute();
 	}
-	
-	
-	public int  removeRoute(String routeId)
+
+	public int removeRoute(String routeId)
 	{
-		return routedao.removeRoute(routeId);
+	return routeDao.removeRoute(routeId);
 	}
-	
-	
-	public boolean modifyRoute(Route routeBean)
+
+	public boolean modifyRoute(Route routebean)
 	{
-		return routedao.modifyRoute(routeBean);
+	return routeDao.modifyRoute(routebean);
 	}
-	
-	
-	
-	
-	
-	
-	
+
 }

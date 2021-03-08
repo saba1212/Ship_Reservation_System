@@ -10,8 +10,13 @@
    http://www.springframework.org/schema/context 
    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+	
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.cruds.srs.*" />
+
+
 
 
 	<bean id="shipDAO" class="com.cruds.srs.db.ShipDAOImpl">
@@ -20,15 +25,29 @@
 		</property>
 	</bean>
 	
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	
+	<bean id="routeDAO" class="com.cruds.srs.db.RouteDAOImpl">
+		<property name="sessionfactory">
+			<ref bean="sessionfactory" />
+		</property>
+	</bean>
+	
+	<bean id="scheduleDAO" class="com.cruds.srs.db.ScheduleDAOImpl">
+		<property name="sessionfactory">
+			<ref bean="sessionfactory" />
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+<bean id="jdbcTemplate" class= "org.springframework.jdbc.core.JdbcTemplate">
+			<property name="dataSource" ref= "dataSource"/>
 
- 
-    
+</bean>
+
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -54,6 +73,7 @@
 			</props>
 		</property>
 	</bean>
+
 
 
 </beans>

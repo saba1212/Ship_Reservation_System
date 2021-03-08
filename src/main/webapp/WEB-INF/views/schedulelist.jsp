@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>SHIP LIST PAGE</title>
+<title>SCHEDULE LIST PAGE</title>
 
 <style type="text/css">
 .myTable { background-color:#FFFFE0;border-collapse:collapse; }
@@ -26,17 +26,18 @@
 
 <div align="center">
 
-<h1> SHIP LIST</h1>
+<h1> SCHEDULE LIST</h1>
 
 	<table border="2" bordercolor =blue; "-collapse:collaps" backgroundcolor = background-color:coral;color:white;width:90%;>
 
 		<thead>
 			<table class="myTable">
 			<tr>
+				<th>SCHEDULE ID</th>
 				<th>SHIP ID</th>
-				<th>SHIP NAME</th>
-				<th>SEATING CAPACITY</th>
-				<th>RESERVATION CAPACITY</th>
+				<th>ROUTE ID </th>
+				<th>STARTING  DATE</th>
+				<th>DEPARTURE TIME</th>				
 				<th>    DELETE </th>
 				<th>    MODIFY  </th>
 			</tr>
@@ -44,16 +45,19 @@
 		
 		<tbody>
 
-			<c:forEach var="s" items="${SHIP_LIST}">
+			<c:forEach var="s" items="${SCHEDULE_LIST}">
 				<tr>
+					<td>${s.scheduleid}</td>
 					<td>${s.shipid}</td>
-					<td>${s.shipname}</td>
-					<td>${s.seatingcapacity}</td>
-					<td>${s.reservationcapacity}</td>
-					<td> <a href="shipdelete?shipid=${s.shipid}&shipname=${s.shipname}&seatingcapacity=${s.seatingcapacity}&reservationcapacity=${s.reservationcapacity}"
+					<td>${s.routeid}</td>
+					<td>${s.startingdate}</td>
+					<td>${s.departuretime}
+					
+					<td> <a href="scheduledelete?scheduleid=${s.scheduleid}&shipid=${s.shipid}&routeid=${s.routeid}&startingdate=${s.startingdate}&departuretime=${s.departuretime}"
 							> DELETE </a></td>
-					<td> <a href="shipmodify?shipid=${s.shipid}&shipname=${s.shipname}&seatingcapacity=${s.seatingcapacity}&reservationcapacity=${s.reservationcapacity}"
+					<td> <a href="schedulemodify?scheduleid=${s.scheduleid}&shipid=${s.shipid}&routeid=${s.routeid}&startingdate=${s.startingdate}&departuretime=${s.departuretime}"
 							> MODIFY </a></td>
+					
 					
 	
 				</tr>
@@ -65,7 +69,7 @@
 
 
 	</table>
-	 <%
+	  <%
 		String msg =(String)request.getAttribute("MESSAGE");
 	
 		if (msg != null) {

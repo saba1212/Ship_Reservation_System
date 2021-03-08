@@ -1,8 +1,8 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -32,8 +32,9 @@
 			if (shipid != null) {%> <%=shipid%> <%}%>"
 				name=shipid required readonly /> 
 				<br> </br>
-				 <label
-				for="shipname">Choose a Ship:</label> 
+				
+			 <label
+				for="shipname">CHOOSE A SHIP:</label> 
 				<select
 				value="<%String shipname = (String) session.getAttribute("shipname");
 			
@@ -48,19 +49,19 @@
 			</select> 
 			<br> </br> 
 			
-			<label> Seating Capacity</label> 
+			<label> SEATING CAPACITY:</label> 
 			<input type="text"
 				value="<%=session.getAttribute("seatingcapacity")%>"
 				name="seatingcapacity" required /> 
 				<br> </br> 
 				
-			<label>Reservation Capacity</label> 
+			<label>RESERVATION CAPACITY:</label> 
 			<input type="text"
 				value="<%=session.getAttribute("reservationcapacity")%>"
 				name="reservationcapacity" required /> 
 				<br> </br> 
 				
-			<input type="submit" value="Modify" />
+			<input type="submit" value="MODFIY" />
 
 		</form>
 

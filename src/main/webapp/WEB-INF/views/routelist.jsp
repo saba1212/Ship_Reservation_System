@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>SHIP LIST PAGE</title>
+<title>ROUTE LIST PAGE</title>
 
 <style type="text/css">
 .myTable { background-color:#FFFFE0;border-collapse:collapse; }
@@ -26,17 +26,18 @@
 
 <div align="center">
 
-<h1> SHIP LIST</h1>
+<h1> ROUTE LIST</h1>
 
 	<table border="2" bordercolor =blue; "-collapse:collaps" backgroundcolor = background-color:coral;color:white;width:90%;>
 
 		<thead>
 			<table class="myTable">
 			<tr>
-				<th>SHIP ID</th>
-				<th>SHIP NAME</th>
-				<th>SEATING CAPACITY</th>
-				<th>RESERVATION CAPACITY</th>
+				<th>ROUTE ID</th>
+				<th>SOURCE</th>
+				<th>DESTINATION</th>
+				<th>TRAVEL DURATION</th>
+				<th>FARE/MILE</th>
 				<th>    DELETE </th>
 				<th>    MODIFY  </th>
 			</tr>
@@ -44,16 +45,18 @@
 		
 		<tbody>
 
-			<c:forEach var="s" items="${SHIP_LIST}">
+			<c:forEach var="r" items="${ROUTE_LIST}">
 				<tr>
-					<td>${s.shipid}</td>
-					<td>${s.shipname}</td>
-					<td>${s.seatingcapacity}</td>
-					<td>${s.reservationcapacity}</td>
-					<td> <a href="shipdelete?shipid=${s.shipid}&shipname=${s.shipname}&seatingcapacity=${s.seatingcapacity}&reservationcapacity=${s.reservationcapacity}"
+					<td>${r.routeid}</td>
+					<td>${r.source}</td>
+					<td>${r.destination}</td>
+					<td>${r.travelduration}</td>
+					<td>${r.fare}</td>
+					<td> <a href="routedelete?routeid=${r.routeid}&source=${r.source}&destination=${r.destination}&travelduration=${r.travelduration}&fare=${r.fare}"
 							> DELETE </a></td>
-					<td> <a href="shipmodify?shipid=${s.shipid}&shipname=${s.shipname}&seatingcapacity=${s.seatingcapacity}&reservationcapacity=${s.reservationcapacity}"
+					<td> <a href="routemodify?routeid=${r.routeid}&source=${r.source}&destination=${r.destination}&travelduration=${r.travelduration}&fare=${r.fare}"
 							> MODIFY </a></td>
+					
 					
 	
 				</tr>

@@ -34,6 +34,7 @@
 
 
      	  <mapping class="com.cruds.srs.entity.Ship"/>
+     	  <mapping class="com.cruds.srs.entity.Route"/>
       
          
      	

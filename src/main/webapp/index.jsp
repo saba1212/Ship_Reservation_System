@@ -1,36 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
 <html>
 <head>
-<title>WELCOME SHIP RESERVATION SYSTEM PAGE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>INDEX PAGE</title>
 </head>
 <body>
-<style>
-          body {
-            background-image: url("file:///C:/Users/Win/workspace2/SRS/src/main/webapp/WEB-INF/images/Ship.jpg");
-         }
-</style>
- 
- 
- <h1> WELCOME TO SHIP RESERVATION SYSTEM</h1>
- <br>
- <br>
- <br>
- <a href="Ship.html"><h2><b><em>ENTER SHIP DETAILS</em></b></a></h2>
- <br>
- <br>
- <br>
- <br>
- <br>
- <a href="Shiplist.html"><h2><b><em> VIEW SHIP LIST(Includes Delete & Modify the Ship)</em></b></a></h2>
- 
+<a href= "Ship.html"> <em>SHIP DETAILS</em></a>
+
+<br>
+<br>
+<br>
+
+<a href= "Shiplist.html"><em>SHIP LIST(Includes Delete and Modify Ship Details)</em>></a>
 <br>
 <br>
 <br>
 <br>
 <br>
 <br>
+
+<a href= "Route.html"><em>ROUTE DETAILS</em></a>
+
 <br>
 <br>
-<br><br>
+<br>
+
+<a href= "Routelist.html"><em>ROUTE LIST(Includes Delete and Modify Route Details)</em></a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href= "Schedule.html"><em><strong>SCHEDULE DETAILS</strong></em></a>
+
+<br>
+<br>
+<br>
+
+<a href= "Schedulelist.html"><em><strong>SCHEDULE LIST(Includes Delete and Modify Schedule Details)</strong></em></a>
 <br>
 <br>
 <br>

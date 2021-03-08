@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>    	
+		<mapping class="com.cruds.srs.entity.Ship"/>
+		<mapping class="com.cruds.srs.entity.Route"/>	
+		<mapping class="com.cruds.srs.entity.Schedule"/>				
+    </session-factory>
+</hibernate-configuration>

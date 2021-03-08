@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 import com.cruds.srs.entity.Ship;
 import com.cruds.srs.service.Shipservice;
@@ -90,8 +90,7 @@ public class ShipController {
 		
 		
 		@RequestMapping(value="/shipdeletedo",method=RequestMethod.GET)
-		public String getshipDeleteform( 
-				HttpServletRequest request,HttpSession session,Model model)
+		public String getshipDeleteform( HttpServletRequest request,HttpSession session,Model model)
 		{
 
 			String shipid=(String)session.getAttribute("shipid");

@@ -5,29 +5,27 @@ import java.util.ArrayList;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Repository;
 
 import com.cruds.srs.entity.Route;
-
+import com.cruds.srs.entity.Schedule;
 import com.cruds.srs.exception.SRSException;
 
 //@Repository
-public class RouteDAOImpl implements RouteDAO {
+public class ScheduleDAOImpl implements ScheduleDAO {
 	
-@Autowired
-SessionFactory sessionfactory;
+	@Autowired
+	SessionFactory sessionfactory;
 
 
-public void setSessionfactory(SessionFactory sessionfactory) {
+
+	public void setSessionfactory(SessionFactory sessionfactory) {
 	this.sessionfactory = sessionfactory;
 }
 
-
-
-
-//add route
-	public String addRoute(Route Routebean) {
-		
+	
+	//add schedule
+	public String addSchedule(Schedule scheduleBean) {
 		Session session=sessionfactory.openSession();
 		session.beginTransaction();
 		
@@ -36,7 +34,7 @@ public void setSessionfactory(SessionFactory sessionfactory) {
 		{
 
 
-			session.save(Routebean);
+			session.save(scheduleBean);
 			session.getTransaction().commit();
 			session.close();
 			return "success";
@@ -51,7 +49,7 @@ public void setSessionfactory(SessionFactory sessionfactory) {
 		e.printStackTrace();
 		if(e.getMessage().contains("Same Entry"))
 		{
-			throw new SRSException(Routebean.getRouteid() +" This RouteID already exists!");
+			throw new SRSException(scheduleBean.getScheduleid() +" This ScheduleID already exists!");
 		}
 		else
 		{   
@@ -69,29 +67,28 @@ public void setSessionfactory(SessionFactory sessionfactory) {
 		return null;
 	}
 
-	//route list
 	
-	public ArrayList<Route> viewByAllRoute()
-	{
+	//display schedule list
+	public ArrayList<Schedule> viewByAllSchedule() {
 		Session session=sessionfactory.openSession();
 		session.beginTransaction();
 		
-		ArrayList<Route> routelist= (ArrayList<Route>) session.createQuery("from Route").list();
+		ArrayList<Schedule> schedulelist= (ArrayList<Schedule>) session.createQuery("from Schedule").list();
 		session.getTransaction().commit();
 		session.close();
-		return routelist;
+		return schedulelist;
 	}
 
 	
-	// delete route
-	public int removeRoute(String routeId) {
+	//remove schedule
+	public int removeSchedule(String scheduleId) {
 		Session session=sessionfactory.openSession();
 		session.beginTransaction();
 
 		try
 		{
-			Route r= (Route) session.load(Route.class, routeId);			
-			session.delete(r);
+			Schedule s= (Schedule) session.load(Schedule.class, scheduleId);			
+			session.delete(s);
 			session.flush();
 			session.getTransaction().commit();
 			session.close();
@@ -113,15 +110,15 @@ public void setSessionfactory(SessionFactory sessionfactory) {
 		}
 
 	}
+
 	
-	
-//modify route
-	public boolean modifyRoute(Route routebean) {
+	//modify schedule
+	public boolean modifySchedule(Schedule scheduleBean) {
 		Session session=sessionfactory.openSession();
 		session.beginTransaction();
 		try
 		{
-			session.update(routebean);
+			session.update(scheduleBean);
 			session.getTransaction().commit();
 			session.close();
 			return true ;
@@ -137,4 +134,6 @@ public void setSessionfactory(SessionFactory sessionfactory) {
 		}
 	}
 
-}
+	}
+
+

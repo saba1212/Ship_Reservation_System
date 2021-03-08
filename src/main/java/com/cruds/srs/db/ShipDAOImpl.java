@@ -95,16 +95,13 @@ public boolean modifyShip(Ship shipbean) {
 	}
 	catch ( java.lang.NumberFormatException e) {
 
-		System.out.println("exception");
+		System.out.println("Exception");
 		return false;
 	}
 	catch (org.hibernate.TransientObjectException e) {
-		// TODO: handle exception
+		
 		return false;
 	}
-
-
-
 	}
 
 

@@ -1,7 +1,7 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -9,11 +9,6 @@
 </head>
 <body>
 <style>
-
-body
-{
- background-color: white;
-}
 
 table 
 {
@@ -37,9 +32,9 @@ h {
 </style>
 
 
-	<div align="left">
+	<div align="center">
 	
-	<h1> SHIP DELETE</h1>
+	<h1> SHIP DETAILS DELETE FORM</h1>
 	<br>
 	<br>
 	
@@ -53,7 +48,7 @@ h {
 				<th>SHIP NAME</th>
 				<th>SEATING CAPACITY</th>
 				<th>RESERVATION CAPACITY</th>
-				<th>DELETE</th>
+				<th>  DELETE  </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -61,7 +56,7 @@ h {
 
 			<tr>
 
-				<td><% String shipid=(String)session.getAttribute("shipid");if(shipid!=null){ %>
+				<td><% String shipid=(String) session.getAttribute("shipid");if(shipid!=null){ %>
 				
 				<%=shipid %> <%} %>
 				
@@ -82,7 +77,7 @@ h {
 				<td> 
 				
 				<a href="shipdeletedo"<%= session.getAttribute("shipid") %>"
-							> <input type="submit" value="Delete"> </a></td>
+							> <input type="submit" value="DELETE"> </a></td>
 			</tr>
 
 		</tbody>
